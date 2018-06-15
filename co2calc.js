@@ -29,9 +29,9 @@ function Calculate()
 				  byId("hydro%").value * byId("hydroCO").value + byId("renew%").value * byId("renewCO").value + byId("nuclear%").value * byId("nuclearCO").value + 
 				  byId("custom%").value * byId("customCO").value) / 100000) * 24 * 365.25 * power; //Yes, I am acounting for the leap year. Yes, I am a nerd.
 	treesRuired = kgCO2result / 15.7;
-	byId("kgCO2result").textContent = Math.ceil(kgCO2result);
-	byId("treesRuired").textContent = Math.ceil(treesRuired);
-	byId("priceRuired").textContent = Math.ceil(treesRuired / 10);	
+	byId("kgCO2result").textContent = ((Math.ceil(kgCO2result)).toLocaleString('en')).replace(/,/g," ");
+	byId("treesRuired").textContent = ((Math.ceil(treesRuired)).toLocaleString('en')).replace(/,/g," ");
+	byId("priceRuired").textContent = ((Math.round(treesRuired / 10)).toLocaleString('en')).replace(/,/g," ");;	
 }
 
 function CSVParse()
