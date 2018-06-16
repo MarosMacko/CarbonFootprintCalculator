@@ -22,7 +22,8 @@ Well... There are numbers of factors which we have to talk about.
 
 # How can I offset my carbon footprint?
 
-[https://trees.org](https://trees.org) is the site to go, if you ask me. But that is up to you. Be responsible for your footprint on the planet!
+- [https://trees.org](https://trees.org) is the site to go, if you ask me. But that is up to you. Be responsible for your footprint on the planet!
+- How often to donate you ask? It takes few years for the tree to grow up to full potential, but then it "works" for you for around 40 years. This is continuous, so while you consume the same amount of energy every year, the tree manages to take care of that same amount - as calculated.
 
 
 # Sources
