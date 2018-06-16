@@ -30,7 +30,7 @@ Well... There are numbers of factors which we have to talk about.
 
 ### Energy sources by country
 - [http://wdi.worldbank.org/table/3.7](http://wdi.worldbank.org/table/3.7) (data from 2015)
-- You can see/use this informations processed in /data/ folder in xlsx and csv formats
+- You can see/use this informations in /Sources folder processed into .xlsx  and .csv formats
 
 ### Amounts of CO2 producted per kWh based on power plant type
 - Original source: "2014 IPCC, Global warming potential of selected electricity sources"
