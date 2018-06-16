@@ -174,12 +174,12 @@ Where does your power come from?
 		<td><input type="text" id="oilCO" class="num" value="778" onkeyup="Calculate()"></input> gCO<sub>2</sub>/kWh</td>
 	</tr>
 	<tr>
-		<td>Hydropower <br>(gCO<sub>2</sub> can vary widely, read Wiki page)</td>
+		<td>Hydropower*</td>
 		<td><input type="text" id="hydro%" class="num" value="0" onkeyup="Calculate()"></input> %</td>
 		<td><input type="text" id="hydroCO" class="num" value="24" onkeyup="Calculate()"></input> gCO<sub>2</sub>/kWh</td>
 	</tr>
 	<tr>
-		<td>Renewable <br>(using gCO<sub>2</sub> values for Solar PV rooftop)</td>
+		<td>Renewable**</td>
 		<td><input type="text" id="renew%" class="num" value="0" onkeyup="Calculate()"></input> %</td>
 		<td><input type="text" id="renewCO" class="num" value="41" onkeyup="Calculate()"></input> gCO<sub>2</sub>/kWh</td>
 	</tr>
@@ -201,7 +201,7 @@ Total percentage: <span id="total%"></span>
 <br>
 
 How much power do you use (continuously)?
-<input type="text" id="power" value="1000" class="num" onkeyup="Calculate()" width="7ch"></input>
+<input type="text" id="power" value="1000" class="power" onkeyup="Calculate()"></input>
 	<select id="powerUnit" onchange="Calculate()">
 		<option value="1000" id="W" selected>W</option>
 		<option value="1" id="kW">kW</option>
@@ -224,26 +224,29 @@ You can donate <b><span id="priceRuired"></span>$</b> to <a href="https://trees.
 
 </form>
 
-
-
-Sources and notes:
+*gCO<sub>2</sub> can vary widely, read Wiki page in Sources
 <br>
-<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler') .style.display=='none') {document.getElementById('spoiler') .style.display=''}else{document.getElementById('spoiler') .style.display='none'}">Spoiler</button>
-<div id="spoiler" style="display:none">
-	Electricity sources: <a href="http://wdi.worldbank.org/table/3.7">The World Bank statistics</a> (Data from 2015)
-	<br>
-	CO<sub>2</sub>/kWh values: Using median values from IPCC: Global warming potential of selected electricity sources (2014)
-	<br>
-	CO<sub>2</sub>/kWh values may differ a lot, especially when power plants use newest (better values), or older (worse values) technologies. 
-	Check the <a href="https://en.wikipedia.org/wiki/Life-cycle_greenhouse-gas_emissions_of_energy_sources">Wikipedia page</a> for Min/Max values. 
-	<br> 
-	This calculations assume that you use electricity proportionally from all power plants of your country.
-	<br> 
-	If you know better where your electricity comes from (for example, you use your own solar power), edit the settings accordingly.
-	<br>
-	One tree can elimitane 15.7 kg of CO<sub>2</sub> per year. Source: <a href="https://www.tfaforms.com/4666774">https://www.tfaforms.com/4666774</a>
-	<br>
-</div>
+**using gCO2 values for Solar PV rooftop, read Wiki page in Sources for other values
+
+<br>
+<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler') .style.display=='none') {document.getElementById('spoiler') .style.display=''}else{document.getElementById('spoiler') .style.display='none'}">Sources and notes</button>
+	<div id="spoiler" style="display:none">
+	<fieldset class="fieldset">
+		Electricity sources: <a href="http://wdi.worldbank.org/table/3.7">The World Bank statistics</a> (Data from 2015)
+		<br>
+		CO<sub>2</sub>/kWh values: Using median values from IPCC: Global warming potential of selected electricity sources (2014)
+		<br>
+		CO<sub>2</sub>/kWh values may differ a lot, especially when power plants use newest (better values), or older (worse values) technologies. 
+		Check the <a href="https://en.wikipedia.org/wiki/Life-cycle_greenhouse-gas_emissions_of_energy_sources">Wikipedia page</a> for Min/Max values. 
+		<br> 
+		This calculations assume that you use electricity proportionally from all power plants of your country.
+		<br> 
+		If you know better where your electricity comes from (for example, you use your own solar power), edit the settings accordingly.
+		<br>
+		One tree can elimitane 15.7 kg of CO<sub>2</sub> per year. Source: <a href="https://www.tfaforms.com/4666774">https://www.tfaforms.com/4666774</a>
+		<br>
+	</fieldset>
+	</div>
 <br>
 
 
