@@ -9,7 +9,7 @@ A carbon footprint is historically defined as the total emissions caused by an i
 
 # Who is this for?
 
-This calculator is for anyone using electricity, who wants to know how much carbon footprint they produce, and eliminate it (by presenting the output equivalent to trees planted). This is called offsetting the carbon footprint. Of course, electricityy is just a fraction of our total carbon footprint. But if you consume a lot of it, you might want to do something. Originally the calculator was made for cryptocurrency miners, as they are very energy intensive.
+This calculator is for anyone using electricity, who wants to know how much carbon footprint they produce, and eliminate it (by presenting the output equivalent to trees planted). This is called offsetting the carbon footprint. Of course, electricity is just a fraction of our total carbon footprint. But if you consume a lot of it, you might want to do something. Originally the calculator was made for Cryptocurrency miners, as they are very energy intensive.
 
 # How accurate is this?
 
@@ -34,7 +34,7 @@ Well... There are numbers of factors which we have to talk about.
 
 ### Amounts of CO2 produced per kWh based on power plant type
 - Original source: "2014 IPCC, Global warming potential of selected electricity sources"
-- Found at [https://en.wikipedia.org/wiki/Life-cycle_greenhouse-gas_emissions_of_energy_sources](https://en.wikipedia.org/wiki/Life-cycle_greenhouse-gas_emissions_of_energy_sources) - read more if you are interested, or want to use other (more optimistic or pesimistic) values for gCO2/kWh calculations
+- Found at [https://en.wikipedia.org/wiki/Life-cycle_greenhouse-gas_emissions_of_energy_sources](https://en.wikipedia.org/wiki/Life-cycle_greenhouse-gas_emissions_of_energy_sources) - read more if you are interested, or want to use other (more optimistic or pessimistic) values for gCO2/kWh calculations
 
 ### kG of CO2 eliminated per tree
 - According to [https://www.tfaforms.com/4666774](https://www.tfaforms.com/4666774), it is roughly 15.7kg
