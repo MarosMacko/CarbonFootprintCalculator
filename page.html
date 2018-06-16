@@ -6,8 +6,8 @@
 
 <body>
 <form>
-Preload the electricity generation stats by the country:
-<select id="countries" onchange="CountrySelected()" autofocus>
+    <label for="countries">Preload the electricity generation stats by the country:</label>
+    <select id="countries" onchange="CountrySelected()" autofocus>
 	<option value="Albania">Albania</option>
 	<option value="Algeria">Algeria</option>
 	<option value="Angola">Angola</option>
@@ -150,48 +150,49 @@ Preload the electricity generation stats by the country:
 	<option value="Zambia">Zambia</option>
 	<option value="Zimbabwe">Zimbabwe</option>
 
-	
+
 </select>
 
 <br>
 
-Where does your power come from?
+
 <br>
-<table id="inputTable" class="inputTable">
+
+	<table id="inputTable" class="inputTable">
 	<tr>
-		<td>Coal</td>
-		<td><input type="text" id="coal%" class="num" value="100" onkeyup="Calculate()"></input> %</td>
-		<td><input type="text" id="coalCO" class="num" value="820" onkeyup="Calculate()"></input> gCO<sub>2</sub>/kWh</td>
+		<td><label for="coal%">Coal</label></td>
+		<td><input type="text" id="coal%" class="num" value="100" onkeyup="Calculate()"> %</td>
+		<td><input type="text" id="coalCO" class="num" value="820" onkeyup="Calculate()"> gCO<sub>2</sub>/kWh</td>
 	</tr>
 	<tr>
-		<td>Natural gas</td>
-		<td><input type="text" id="gas%" class="num" value="0" onkeyup="Calculate()"></input> %</td>
-		<td><input type="text" id="gasCO" class="num" value="490" onkeyup="Calculate()"></input> gCO<sub>2</sub>/kWh</td>
+		<td><label for="gas%">Natural gas</label></td>
+		<td><input type="text" id="gas%" class="num" value="0" onkeyup="Calculate()"> %</td>
+		<td><input type="text" id="gasCO" class="num" value="490" onkeyup="Calculate()"> gCO<sub>2</sub>/kWh</td>
 	</tr>
 	<tr>
-		<td>Oil</td>
-		<td><input type="text" id="oil%" class="num" value="0" onkeyup="Calculate()"></input> %</td>
-		<td><input type="text" id="oilCO" class="num" value="778" onkeyup="Calculate()"></input> gCO<sub>2</sub>/kWh</td>
+		<td><label for="oil%">Oil</label></td>
+		<td><input type="text" id="oil%" class="num" value="0" onkeyup="Calculate()"> %</td>
+		<td><input type="text" id="oilCO" class="num" value="778" onkeyup="Calculate()"> gCO<sub>2</sub>/kWh</td>
 	</tr>
 	<tr>
-		<td>Hydropower*</td>
-		<td><input type="text" id="hydro%" class="num" value="0" onkeyup="Calculate()"></input> %</td>
-		<td><input type="text" id="hydroCO" class="num" value="24" onkeyup="Calculate()"></input> gCO<sub>2</sub>/kWh</td>
+		<td><label for="hydro%">Hydropower*</label></td>
+		<td><input type="text" id="hydro%" class="num" value="0" onkeyup="Calculate()"> %</td>
+		<td><input type="text" id="hydroCO" class="num" value="24" onkeyup="Calculate()"> gCO<sub>2</sub>/kWh</td>
 	</tr>
 	<tr>
-		<td>Renewable**</td>
-		<td><input type="text" id="renew%" class="num" value="0" onkeyup="Calculate()"></input> %</td>
-		<td><input type="text" id="renewCO" class="num" value="41" onkeyup="Calculate()"></input> gCO<sub>2</sub>/kWh</td>
+		<td><label for="renew%">Renewable**</label></td>
+		<td><input type="text" id="renew%" class="num" value="0" onkeyup="Calculate()"> %</td>
+		<td><input type="text" id="renewCO" class="num" value="41" onkeyup="Calculate()"> gCO<sub>2</sub>/kWh</td>
 	</tr>
 	<tr>
-		<td>Nuclear</td>
-		<td><input type="text" id="nuclear%" class="num" value="0" onkeyup="Calculate()"></input> %</td>
-		<td><input type="text" id="nuclearCO" class="num" value="12" onkeyup="Calculate()"></input> gCO<sub>2</sub>/kWh</td>
+		<td><label for="nuclear%">Nuclear</label></td>
+		<td><input type="text" id="nuclear%" class="num" value="0" onkeyup="Calculate()"> %</td>
+		<td><input type="text" id="nuclearCO" class="num" value="12" onkeyup="Calculate()"> gCO<sub>2</sub>/kWh</td>
 	</tr>
 	<tr>
-		<td>Custom</td>
-		<td><input type="text" id="custom%" class="num" value="0" onkeyup="Calculate()"></input> %</td>
-		<td><input type="text" id="customCO" class="num" value="0" onkeyup="Calculate()"></input> gCO<sub>2</sub>/kWh</td>
+		<td><label for="custom%">Custom</label></td>
+		<td><input type="text" id="custom%" class="num" value="0" onkeyup="Calculate()"> %</td>
+		<td><input type="text" id="customCO" class="num" value="0" onkeyup="Calculate()"> gCO<sub>2</sub>/kWh</td>
 	</tr>
 
 </table>
@@ -201,7 +202,7 @@ Total percentage: <span id="total%"></span>
 <br>
 
 How much power do you use (continuously)?
-<input type="text" id="power" value="1000" class="power" onkeyup="Calculate()"></input>
+    <input type="text" id="power" value="1000" class="power" onkeyup="Calculate()">
 	<select id="powerUnit" onchange="Calculate()">
 		<option value="1000" id="W" selected>W</option>
 		<option value="1" id="kW">kW</option>
@@ -215,12 +216,12 @@ How much power do you use (continuously)?
 <!--RESULTS-->
 You produce <b><span id="kgCO2result"></span></b> kg of CO<sub>2</sub> emissions per year.
 <br>
-You would need to plant <b><span id="treesRuired"></span></b> trees to eliminate your carbon footprint on our planet.
+You would need to plant <b><span id="treesRequired"></span></b> trees to eliminate your carbon footprint on our planet.
 <br>
-You can donate <b><span id="priceRuired"></span>$</b> to <a href="https://trees.org">trees.org</a> to eliminate your carbon footprint.
+You can donate <b><span id="priceRequired"></span>$</b> to <a href="https://trees.org">trees.org</a> to eliminate your carbon footprint.
 
 <br>
-<input type="reset"></input>
+<input type="reset">
 
 </form>
 
@@ -229,9 +230,9 @@ You can donate <b><span id="priceRuired"></span>$</b> to <a href="https://trees.
 **using gCO2 values for Solar PV rooftop, read Wiki page in Sources for other values
 
 <br>
-<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler') .style.display=='none') {document.getElementById('spoiler') .style.display=''}else{document.getElementById('spoiler') .style.display='none'}">Sources and notes</button>
+<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler').style.display=='none') {document.getElementById('spoiler').style.display=''}else{document.getElementById('spoiler').style.display='none'}">Sources and notes</button>
 	<div id="spoiler" style="display:none">
-	<fieldset class="fieldset">
+	<fieldset class="fieldSet">
 		Electricity sources: <a href="http://wdi.worldbank.org/table/3.7">The World Bank statistics</a> (Data from 2015)
 		<br>
 		CO<sub>2</sub>/kWh values: Using median values from IPCC: Global warming potential of selected electricity sources (2014)
