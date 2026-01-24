@@ -1,57 +1,460 @@
-html
-{
-font-family: Source Sans Pro, sans serif;
-background-color:#AAAAAA;
+/* ===== CSS Variables for Easy Theming ===== */
+:root {
+    --primary-green: #2e7d32;
+    --primary-green-light: #4caf50;
+    --primary-green-dark: #1b5e20;
+    --accent-orange: #ff9800;
+    --accent-red: #e53935;
+    --bg-light: #f5f7f5;
+    --bg-white: #ffffff;
+    --text-dark: #2c3e2c;
+    --text-muted: #5f6f5f;
+    --border-light: #e0e5e0;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --transition: all 0.2s ease;
 }
 
-.num
-{
-	width: 5ch;
+/* ===== Reset & Base Styles ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.power
-{
-	width: 7ch;
-	text-align: right;
+html {
+    font-family: 'Segoe UI', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background: linear-gradient(135deg, var(--bg-light) 0%, #e8f5e9 100%);
+    min-height: 100vh;
 }
 
-.fieldSet
-{
-	display:inline-block;
+body {
+    color: var(--text-dark);
+    padding: 24px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-table
-{
-	border: 2px solid black;
+/* ===== Header Section ===== */
+.header {
+    text-align: center;
+    margin-bottom: 32px;
+    padding: 32px 24px;
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-light) 100%);
+    border-radius: var(--radius-lg);
+    color: white;
+    box-shadow: var(--shadow-md);
 }
 
-th,td
-{
-	border-bottom: 1px solid #DDD;
+.header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
 }
 
-tr:hover
-{
-	background-color: #B58F8F !important;
+.header p {
+    opacity: 0.9;
+    font-size: 1rem;
 }
 
-tr:nth-child(even) 
-{
-	background-color: #F2F2F2;
+/* ===== Card Containers ===== */
+.card {
+    background: var(--bg-white);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    transition: var(--transition);
 }
 
-select 
-{
-    width: 20ch;
-    padding: 4px 10px;
+.card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-green-dark);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ===== Form Elements ===== */
+label {
+    font-weight: 500;
+    color: var(--text-dark);
+    display: block;
+    margin-bottom: 8px;
+}
+
+select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-white);
+    font-size: 1rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: var(--transition);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%232e7d32' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+}
+
+select:hover, select:focus {
+    border-color: var(--primary-green);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+input[type="text"] {
+    padding: 10px 12px;
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    color: var(--text-dark);
+    transition: var(--transition);
+    background: var(--bg-white);
+}
+
+input[type="text"]:hover, input[type="text"]:focus {
+    border-color: var(--primary-green);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+.num {
+    width: 70px;
+    text-align: center;
+}
+
+.power {
+    width: 100px;
+    text-align: right;
+}
+
+#powerUnit {
+    width: auto;
+    padding: 10px 32px 10px 12px;
+    margin-left: 8px;
+}
+
+/* ===== Energy Sources Table ===== */
+.inputTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
     border: none;
-    border-radius: 4px;
-    background-color: #f1f1f1;
+    margin: 16px 0;
 }
 
-input
-{
-    border: 1px solid black;
-    border-radius: 4px;
-	padding: 3px;
+.inputTable td {
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: middle;
+}
+
+.inputTable tr:last-child td {
+    border-bottom: none;
+}
+
+.inputTable td:first-child {
+    font-weight: 500;
+    color: var(--text-dark);
+    width: 140px;
+}
+
+.inputTable td:nth-child(2),
+.inputTable td:nth-child(3) {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.inputTable tr {
+    transition: var(--transition);
+    border-radius: var(--radius-sm);
+}
+
+.inputTable tr:hover {
+    background-color: rgba(46, 125, 50, 0.05) !important;
+}
+
+.inputTable tr:nth-child(even) {
+    background-color: var(--bg-light);
+}
+
+/* ===== Percentage Indicator ===== */
+.percentage-display {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--bg-light);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    margin: 8px 0;
+}
+
+.percentage-display.valid {
+    background: rgba(46, 125, 50, 0.1);
+    color: var(--primary-green);
+}
+
+.percentage-display.invalid {
+    background: rgba(229, 57, 53, 0.1);
+    color: var(--accent-red);
+}
+
+/* ===== Power Input Section ===== */
+.power-input-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+/* ===== Results Section ===== */
+.results-card {
+    background: linear-gradient(135deg, var(--bg-white) 0%, #f1f8e9 100%);
+    border: 2px solid var(--primary-green-light);
+}
+
+.result-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.result-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.result-item:first-child {
+    padding-top: 0;
+}
+
+.result-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.result-icon.co2 {
+    background: rgba(229, 57, 53, 0.1);
+}
+
+.result-icon.trees {
+    background: rgba(46, 125, 50, 0.1);
+}
+
+.result-icon.donate {
+    background: rgba(255, 152, 0, 0.1);
+}
+
+.result-content {
+    flex: 1;
+}
+
+.result-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.result-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.result-value span {
+    color: var(--primary-green-dark);
+}
+
+.result-value a {
+    color: var(--primary-green);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.result-value a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Buttons ===== */
+input[type="reset"],
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+input[type="reset"] {
+    background: var(--bg-light);
+    color: var(--text-muted);
+    border: 2px solid var(--border-light);
+    margin-top: 16px;
+}
+
+input[type="reset"]:hover {
+    background: var(--border-light);
+    color: var(--text-dark);
+}
+
+.sources-btn {
+    background: var(--primary-green);
+    color: white;
+    margin-top: 16px;
+}
+
+.sources-btn:hover {
+    background: var(--primary-green-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ===== Sources/Notes Section ===== */
+.fieldSet {
+    display: block;
+    background: var(--bg-light);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.fieldSet a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.fieldSet a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Notes & Footer ===== */
+.notes {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+    padding-left: 8px;
+    border-left: 3px solid var(--border-light);
+}
+
+.footer {
+    text-align: center;
+    padding: 24px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 12px;
+}
+
+.footer a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 600px) {
+    body {
+        padding: 16px;
+    }
+
+    .header {
+        padding: 24px 16px;
+    }
+
+    .header h1 {
+        font-size: 1.4rem;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .inputTable td {
+        padding: 10px 4px;
+        font-size: 0.9rem;
+    }
+
+    .inputTable td:first-child {
+        width: 100px;
+    }
+
+    .num {
+        width: 55px;
+    }
+
+    .result-value {
+        font-size: 1.2rem;
+    }
+
+    .power-input-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #powerUnit {
+        margin-left: 0;
+        margin-top: 8px;
+    }
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeIn 0.3s ease;
+}
+
+/* ===== Subscript Styling ===== */
+sub {
+    font-size: 0.75em;
 }
